@@ -2,7 +2,7 @@
 
 ## Challenge
 
-Take a screenshot of a website and recreating it using only native HTML and CSS.
+Take a screenshot of a website and recreating it using only native HTML and CSS. Branded icons and images can be replaced by placeholder images like [placekitten](https://placekitten.com/)
 
 ## Purpose
 

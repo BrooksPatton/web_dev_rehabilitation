@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.red-font {
+    color: orangered;
+}
+
+.indent {
+    margin-left: 50px;
+}
+
+header {
+    display: flex;
+    outline: 1px solid black;
+    height: 50px;
+}
+
+header > section {
+    margin-left: 25px;
+}
+
+header > section:first-child {
+    margin-left: 0;
+}
+
+header p {
+    margin-left: 10px;
+}
+
+header .brand {
+    display: flex;
+    justify-content: flex-start;
+}
+
+header .brand img {
+    border-radius: 50%;
+}
+
+header .brand img, header .brand p {
+    flex-flow: column;
+}
+
+header .brand p {
+    font-size: 25px;
+    line-height: 50px;
+}
+
+header .sort {
+    display: flex;
+    align-items: center;
+}
+
+header .sort select {
+    display: none;
+}
+
+header .search {
+    display: flex;
+}
+
+header .search input {
+    margin: 8px 0;
+}
