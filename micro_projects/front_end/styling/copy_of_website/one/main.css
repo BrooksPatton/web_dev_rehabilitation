@@ -74,9 +74,17 @@ button {
     width: 50%;
 }
 
+.width-53 {
+    width: 53%;
+}
+
 /* style */
 .red-font {
     color: orangered;
+}
+
+.title {
+    color: lightslategray;
 }
 
 button {
@@ -104,6 +112,18 @@ button {
 
 .center {
     align-items: center;
+}
+
+.selected {
+    color: mediumblue;
+}
+
+.unselected {
+    color: cadetblue;
+}
+
+.divider {
+    color: lightgray;
 }
 
 /* tag specific */
