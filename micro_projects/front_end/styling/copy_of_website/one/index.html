@@ -9,17 +9,26 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <header>
-        <section class="brand">
-            <img src="https://placekitten.com/50/50" alt="a cute kitten">
-            <p>redd<span class="red-font">i</span>t</p>
+    <header class="flex border-bottom justify-space-around">
+        <section class="brand flex indent-small width-10">
+            <img src="https://placekitten.com/50/50" alt="a cute kitten" class="circle">
+            <p class="indent-tiny">redd<span class="red-font">i</span>t</p>
         </section>
-        <section class="sort">
-            <img src="https://placekitten.com/25/25" alt="a cute kitten">
-            <p>Popular<span class="indent">▾</span></p>
+        <section class="sort flex indent-small center width-10">
+            <p>📈 Popular<span class="indent">▾</span></p>
         </section>
-        <section class="search">
-            <input type="text" placeholder=" Search Reddit">
+        <section class="search flex indent-small margin-top-bottom width-50">
+            <input type="text" placeholder="⚲ Search Reddit">
+        </section>
+        <section class="filters flex indent-small center justify-space-between width-5">
+            <p>📈</p> <p>📊</p> <p>ꝏ</p>
+        </section>
+        <section class="authentication flex indent-small margin-top-bottom width-15">
+            <button class="button-blue">LOG IN</button>
+            <button class="button-blue-inverse">SIGN UP</button>
+        </section>
+        <section class="account flex center indent-tiny width-2">
+            <p>👤 ▾</p>
         </section>
     </header>
 </body>

@@ -4,69 +4,126 @@
 * {
     margin: 0;
     padding: 0;
-}
-
-body {
+    background: white;
     font-family: 'Poppins', sans-serif;
 }
-
-.red-font {
-    color: orangered;
+ 
+/* positioning */
+body > * {
+    padding: 5px;
 }
 
 .indent {
     margin-left: 50px;
 }
 
-header {
-    display: flex;
-    outline: 1px solid black;
-    height: 50px;
-}
-
-header > section {
+.indent-small {
     margin-left: 25px;
 }
 
-header > section:first-child {
-    margin-left: 0;
-}
-
-header p {
+.indent-tiny {
     margin-left: 10px;
 }
 
-header .brand {
+.flex {
     display: flex;
-    justify-content: flex-start;
 }
 
-header .brand img {
+.justify-space-between {
+    justify-content: space-between;
+}
+
+.justify-space-around {
+    justify-content: space-around;
+}
+
+.margin-top-bottom {
+    margin: 6px 0;
+}
+
+button {
+    margin: 0 6px;
+    padding: 0 35px;
+}
+
+.width-2 {
+    width: 2%;
+}
+
+.width-5 {
+    width: 5%;
+}
+
+.width-10 {
+    width: 10%;
+}
+
+.width-15 {
+    width: 15%;
+}
+
+.width-20 {
+    width: 20%;
+}
+
+.width-40 {
+    width: 40%;
+}
+
+.width-50 {
+    width: 50%;
+}
+
+/* style */
+.red-font {
+    color: orangered;
+}
+
+button {
+    border-radius: 5px;
+}
+
+.button-blue {
+    color: dodgerblue;
+    border-color: dodgerblue;
+}
+
+.button-blue-inverse {
+    color: white;
+    background-color: dodgerblue;
+    border-color: dodgerblue;
+}
+
+.border-bottom {
+    border-bottom: 1px solid lightgray;
+}
+
+.circle {
     border-radius: 50%;
 }
 
-header .brand img, header .brand p {
-    flex-flow: column;
+.center {
+    align-items: center;
 }
 
-header .brand p {
+/* tag specific */
+header > section.brand:first-child {
+    margin-left: 0;
+}
+
+header section.brand p {
     font-size: 25px;
     line-height: 50px;
 }
 
-header .sort {
-    display: flex;
-    align-items: center;
+header section.search input {
+    width: 100%;
 }
 
-header .sort select {
-    display: none;
+header section.filters {
+    width: 5rem;
 }
 
-header .search {
-    display: flex;
-}
 
-header .search input {
-    margin: 8px 0;
-}
+
+
