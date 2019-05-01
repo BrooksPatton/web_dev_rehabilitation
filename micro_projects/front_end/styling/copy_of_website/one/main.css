@@ -71,6 +71,10 @@ button {
     width: 40%;
 }
 
+.width-45 {
+    width: 45%;
+}
+
 .width-50 {
     width: 50%;
 }
@@ -79,13 +83,25 @@ button {
     width: 53%;
 }
 
-.card * {
+.width-100 {
+    width: 100%;
+}
+
+.card {
     padding: 5px;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
+}
+
+.card-main * {
+    margin: 5px;
 }
 
 .column {
     flex-direction: column;
+}
+
+.card-preview img {
+    width: 100%;
 }
 
 /* style */
@@ -113,7 +129,7 @@ button {
     align-items: center;
 }
 
-.selected {
+.selected, .promoted-font {
     color: mediumblue;
 }
 
@@ -160,6 +176,10 @@ button {
 
 .card-link {
     color: cornflowerblue;
+}
+
+.card-promoted .card-votes {
+    border-left: 5px solid dodgerblue;
 }
 
 /* tag specific */
