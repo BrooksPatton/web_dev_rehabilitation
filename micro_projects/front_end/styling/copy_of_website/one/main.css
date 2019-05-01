@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css?family=Marck+Script');
 
 /* reset */
 * {
     margin: 0;
     padding: 0;
+    font-size: 14px;
     background: silver;
     font-family: 'Poppins', sans-serif;
 }
@@ -83,6 +85,14 @@ button {
     width: 53%;
 }
 
+.width-75 {
+    width: 75%;
+}
+
+.width-80 {
+    width: 80%;
+}
+
 .width-100 {
     width: 100%;
 }
@@ -104,6 +114,54 @@ button {
     width: 100%;
 }
 
+.row {
+    flex-direction: row;
+}
+
+.justify-left {
+    justify-content: start;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.pool section {
+    padding: 5px;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.pool-title-blank {
+    height: 60px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.pool-question {
+    margin-top: -120px;
+    margin-bottom: 24px;
+}
+
+.pool-title {
+    height: 100px;
+}
+
+.subreddit-link {
+    padding: 10px;
+    height: 50px;
+}
+
+.popular {
+    margin-top: 15px;
+}
+
+.popular > p {
+    padding: 10px;
+}
+
 /* style */
 .red-font {
     color: orangered;
@@ -115,6 +173,8 @@ button {
 
 button {
     border-radius: 5px;
+    background-color: white;
+    width: 12rem;
 }
 
 .border-bottom {
@@ -141,10 +201,6 @@ button {
     color: lightgray;
 }
 
-.background-white, .background-white * {
-    background: white;
-}
-
 .background-votes, .background-votes * {
     background-color: lightgrey;
 }
@@ -164,12 +220,6 @@ button {
     border-color: dodgerblue;
 }
 
-.button-blue-inverse {
-    color: white;
-    background-color: dodgerblue;
-    border-color: dodgerblue;
-}
-
 .card-title {
     font-weight: bold;
 }
@@ -180,6 +230,51 @@ button {
 
 .card-promoted .card-votes {
     border-left: 5px solid dodgerblue;
+}
+
+.pool h1 {
+    font-family: 'Marck Script', cursive;
+    font-size: 2rem;
+}
+
+.pool-title, .pool-title * {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.background-white, .background-white * {
+    background: white;
+}
+
+.normal-font * {
+    color: black;
+}
+
+.bold-font {
+    font-weight: bold;
+}
+
+.background-off-white, .background-off-white p {
+    background-color: lightgrey;
+}
+
+.button-blue-inverse {
+    color: white;
+    background-color: dodgerblue;
+    border-color: dodgerblue;
+}
+
+.pool-title {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.subreddit-link, * {
+    font-size: 12px;
+}
+
+.subreddit-link, .subreddit-link p {
+    background-color: thistle;
 }
 
 /* tag specific */
@@ -200,6 +295,11 @@ header section.filters {
     width: 5rem;
 }
 
-main {
+main, .sidebar {
     margin: 10px;
+}
+
+button img {
+    width: 10px;
+    height: 10px;
 }
