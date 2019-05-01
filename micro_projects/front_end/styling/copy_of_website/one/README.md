@@ -15,3 +15,7 @@ I have always found that styling with CSS to be one of my weaker skills. This ex
 ## Website to Recreate
 
 ![reddit.com](./reddit.png)
+
+## Created version
+
+![my created version of reddit](./created_version.png)
