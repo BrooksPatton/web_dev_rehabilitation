@@ -21,6 +21,6 @@ I also have two bigger projects. These are more real life projects and therefore
 
 #### Styling
 
-1. [ ] [Create a copy of a website using only native html and css](micro_projects/front_end/styling/copy_of_website/one/)
+1. [x] [Create a copy of a website using only native html and css](micro_projects/front_end/styling/copy_of_website/one/)
 2. [ ] Create a copy of a website using only native html and css
 3. [ ] Create a copy of a website using only native html and css
