@@ -1,0 +1,14 @@
+.elipses {
+    display: flex;
+    justify-content: space-evenly;
+    width: 20px;
+    height: 20px;
+    align-items: center;
+}
+
+.elipses-dot {
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    border-radius: 50%;
+}

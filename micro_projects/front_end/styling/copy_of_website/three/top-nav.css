@@ -1,0 +1,61 @@
+@import "./elipses.css";
+@import "./notifications.css";
+
+.top-nav, .top-nav-left, .top-nav-right {
+    display: flex;
+}
+
+.top-nav {
+    height: 50px;
+    background-color: #6441a4;
+    justify-content: space-between;
+    line-height: 30px;
+    color: #cec3e2;
+}
+
+.top-nav > * {
+    margin: 10px;
+}
+
+.top-nav-left > * {
+    margin-right: 10px;
+}
+
+.top-nav-right > * {
+    margin-left: 10px;
+}
+
+.top-nav-left .elipses {
+    margin-top: 5px;
+}
+
+.top-nav-selected {
+    color: white;
+    border-bottom: 2px solid white;
+    margin-bottom: -10px;
+}
+
+.top-nav input {
+    width: 400px;
+    height: 18px;
+    background-color: #503483;
+    color: #998bb3;
+    font-size: 1.1rem;
+    border: 1px solid #7b5db2;
+    padding: 5px 10px;
+}
+
+.top-nav-right {
+    color: white;
+}
+
+.top-nav-button {
+    height: 30px;
+    margin-top: -3px;
+    padding: 3px;
+}
+
+.top-nav-border {
+    border: 1px solid white;
+    border-radius: 5px;
+}
