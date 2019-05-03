@@ -18,4 +18,4 @@ I have always found that styling with CSS to be one of my weaker skills. This ex
 
 ## Created version
 
-![my created version of reddit](./created_version.png)
+![my created version of reddit](./solution.png)
