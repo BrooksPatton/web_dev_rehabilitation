@@ -1,0 +1,32 @@
+@import "./close-arrow.css";
+
+.banner {
+    height: 45px;
+    background-color: #0e9bd8;
+    flex-grow: 1;
+    display: flex;
+    line-height: 45px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.banner .close-arrow {
+    margin-left: 10px;
+}
+
+.banner-main {
+    justify-self: center;
+}
+
+.banner-prime {
+    color: white;
+}
+
+.banner-underline {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.banner-end {
+    padding-right: 50px;
+}

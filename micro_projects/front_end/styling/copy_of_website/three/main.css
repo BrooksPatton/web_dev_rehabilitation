@@ -1,1 +1,6 @@
-@import "./top-nav.css"
+@import "./popular-channels.css";
+@import "./banner.css";
+
+main {
+    display: flex;
+}

@@ -1,0 +1,23 @@
+@import "./join.css";
+@import "./channel-list-item.css";
+
+.popular-channels {
+    background-color: #19171c;
+    width: 340px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.popular-channels > * {
+    margin-top: 10px;
+}
+
+.popular-channels > h1 {
+    margin-top: 25px;
+    color: #b8b5c0;
+    padding-bottom: 12.5px;
+    border-bottom: 1px solid #b8b5c0;
+    width: 90%;
+    text-align: center;
+}
