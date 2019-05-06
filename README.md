@@ -22,5 +22,11 @@ I also have two bigger projects. These are more real life projects and therefore
 #### Styling
 
 1. [x] [Create a copy of a website using only native html and css](micro_projects/front_end/styling/copy_of_website/one/)
-2. [x] [Create a copy of a website using only native html and css](micro_projects/front_end/styling/copy_of_website/two)
-3. [x] [Create a copy of a website using only native html and css](micro_projects/front_end/styling/copy_of_website/three)
+1. [x] [Create a copy of a website using only native html and css](micro_projects/front_end/styling/copy_of_website/two)
+1. [x] [Create a copy of a website using only native html and css](micro_projects/front_end/styling/copy_of_website/three)
+
+#### Animations
+
+1. [x] [Create a card flip page that shows photo on one side and text on the other using only native html and css](micro_projects/front_end/animations/card-flip)
+1. [ ] [Create an accurate clock that allows alarms to be set](micro_projects/front_end/animations/alarm)
+1. [ ] [create a page navigation animation that makes it look like the user is flying through the pages](micro_projects/front_end/animations/flying-navigation)
