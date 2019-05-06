@@ -14,7 +14,7 @@ I have always found that styling with CSS to be one of my weaker skills. This ex
 
 ## Website to Recreate
 
-![nasa.gov](./nasa.png)
+![nasa.gov](./twitch.png)
 
 ## Created version
 
