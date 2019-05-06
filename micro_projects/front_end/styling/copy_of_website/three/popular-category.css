@@ -1,0 +1,19 @@
+.popular-category {
+    width: 144px;
+    font-size: 0.8rem;
+}
+
+.popular-category div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popular-category > p {
+    margin-bottom: 5px;
+}
+
+.popular-category-tag {
+    border: 1px solid lightgray;
+    width: 3.3rem;
+    padding: 3px;
+}

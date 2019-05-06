@@ -1,0 +1,11 @@
+@import "./live-channel.css";
+
+.live-channels-bold {
+    font-weight: bold;
+}
+
+.live-channel-list {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}

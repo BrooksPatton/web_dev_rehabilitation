@@ -1,6 +1,17 @@
 @import "./popular-channels.css";
 @import "./banner.css";
+@import "./live-channels.css";
+@import "./popular-categories.css";
 
 main {
     display: flex;
+}
+
+main > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.live-channels, .popular-categories {
+    margin: 25px;
 }

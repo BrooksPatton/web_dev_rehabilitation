@@ -1,0 +1,10 @@
+@import "./popular-category.css";
+
+.popular-categories h1 {
+    margin-bottom: 10px;
+}
+
+.popular-categories-list {
+    display: flex;
+    justify-content: space-between;
+}
