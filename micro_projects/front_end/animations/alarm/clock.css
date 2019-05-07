@@ -25,52 +25,14 @@
     width: 5px;
 }
 
+.minute-marker-mark {
+    height: 12.5px;
+    width: 3px;
+    background-color: darkgray;
+}
+
 .hour-marker-mark {
     height: 25px;
     width: 5px;
     background-color: black;
-}
-
-.one {
-    transform: rotate(30deg);
-}
-
-.two {
-    transform: rotate(60deg);
-}
-
-.three {
-    transform: rotate(90deg);
-}
-
-.four {
-    transform: rotate(120deg);
-}
-
-.five {
-    transform: rotate(150deg);
-}
-
-.six {
-    transform: rotate(180deg);
-}
-
-.seven {
-    transform: rotate(210deg);
-}
-
-.eight {
-    transform: rotate(240deg);
-}
-
-.nine {
-    transform: rotate(270deg);
-}
-
-.ten {
-    transform: rotate(300deg);
-}
-
-.eleven {
-    transform: rotate(330deg);
 }
