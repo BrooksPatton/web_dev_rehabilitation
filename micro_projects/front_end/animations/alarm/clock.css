@@ -11,9 +11,11 @@
 
 .clock-center {
     background-color: black;
-    width: 5px;
-    height: 5px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
+    position: absolute;
+    z-index: 99;
 }
 
 .hour-marker {
@@ -35,4 +37,62 @@
     height: 25px;
     width: 5px;
     background-color: black;
+}
+
+.seconds-hand {
+    width: 1px;
+    height: calc(750px / 2 + 25px);
+    background-color: red;
+    position: absolute;
+    z-index: 3;
+}
+
+.seconds-hand-container {
+    width: 1px;
+    height: calc(750px / 2 + 25px);
+    position: absolute;
+    animation-name: rotate-hand;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.minute-hand-container {
+    width: 3px;
+    height: calc(750px / 2 + 25px);
+    position: absolute;
+    animation: rotate-hand 3600s linear infinite;
+}
+
+.minute-hand {
+    width: 3px;
+    height: calc(750px / 2 + 25px);
+    background-color: darkgrey;
+    position: absolute;
+    z-index: 2;
+}
+
+.hour-hand-container {
+    width: 5px;
+    height: calc(750px / 2 - 25px);
+    position: absolute;
+    animation: rotate-hand 43200s linear infinite;
+}
+
+.hour-hand {
+    width: 5px;
+    height: calc(750px / 2 - 25px);
+    background-color: black;
+    position: absolute;
+    z-index: 1;
+}
+
+@keyframes rotate-hand {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }

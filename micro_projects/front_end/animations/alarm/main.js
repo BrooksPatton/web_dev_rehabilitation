@@ -1,23 +1,28 @@
 const clockNode = document.querySelector('.clock')
-const clock = Clock(clockNode)
+const secondsHandNode = document.querySelector('.seconds-hand')
+const minuteHandNode = document.querySelector('.minute-hand')
+const hourHandNode = document.querySelector('.hour-hand')
+const clock = Clock(clockNode, secondsHandNode, minuteHandNode, hourHandNode)
 
 clock.initialize()
-clock.draw()
 
-function Clock(node) {
+function Clock(node, secondsHandNode, minuteHandNode, hourHandNode) {
     const initialize = () => {
         const markers = []
+        const date = new Date()
 
         createMarkers(markers)
         draw(markers)
+        setSecondsHand(date.getSeconds())
+        setMinuteHand(date.getMinutes())
+        setHourHand(date.getHours())
     }
 
     const createMarkers = markers => {
-        const degreesPerMinute = 0.5
-        const minutesPerMarker = 5
+        const degreesPerMinute = 6
         const degreesPerHour = 30
 
-        for (let degrees = 0; degrees < 360; degrees += degreesPerMinute * minutesPerMarker) {
+        for (let degrees = 0; degrees < 360; degrees += degreesPerMinute) {
             const marker = document.createElement('div')
             const markerMark = document.createElement('div')
             const markerSpacer = document.createElement('div')
@@ -34,6 +39,24 @@ function Clock(node) {
 
     const draw = markers => {
         markers.forEach(marker => node.append(marker))
+    }
+
+    const setSecondsHand = currentTimeInSeconds => {
+        const degreesPerSecond = 6
+
+        secondsHandNode.setAttribute('style', `transform: rotate(${currentTimeInSeconds * degreesPerSecond}deg) translateY(calc(750px / 4 * -1 + 36px));`);
+    }
+
+    const setMinuteHand = currentTimeInMinutes => {
+        const degreesPerMinute = 6
+
+        minuteHandNode.setAttribute('style', `transform: rotate(${currentTimeInMinutes * degreesPerMinute}deg) translateY(calc(750px / 4 * -1 + 36px));`)
+    }
+
+    const setHourHand = currentTimeInHours => {
+        const degreesPerHour = 0.5
+
+        hourHandNode.setAttribute('style', `transform: rotate(${currentTimeInHours * degreesPerHour}deg) translateY(calc(750px / 4 * -1 + 36px));`)
     }
 
     return {
