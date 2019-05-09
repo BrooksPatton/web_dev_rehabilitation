@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+}
+
+header {
+    height: 20vh;
+    background-color: burlywood;
+    line-height: 200px;
+    text-align: center;
+    position: relative;
+    top: -20vh;
+}
+
+.container {
+    display: flex;
+    position: relative;
+}
+
+nav {
+    width: 20vw;
+    height: 80vh;
+    background-color: indianred;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: -20vw;
+}
+
+nav button {
+    margin-top: 2rem;
+    height: 2rem;
+}
+
+main {
+    width: 80vw;
+    height: 80vh;
+    background-color: aquamarine;
+    position: relative;
+    right: -80vw;
+}
+
+header, nav, main {
+    transition: top 2s ease-in-out, left 2s ease-in-out, right 2s ease-in-out;
+}

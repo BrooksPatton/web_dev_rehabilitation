@@ -1,0 +1,35 @@
+body {
+    background-image: url("./cute_cat.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    background-size: 0%;
+    transition: background-size 2s;
+    transition-timing-function: ease-in-out;
+}
+
+.cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    opacity: 1;
+    transition: opacity 2s;
+    transition-timing-function: ease-in-out;
+}
+
+main {
+    width: 250px;
+    height: 150px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none;
+}
