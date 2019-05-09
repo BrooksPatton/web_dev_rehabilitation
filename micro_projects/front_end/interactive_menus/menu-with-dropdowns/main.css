@@ -1,0 +1,10 @@
+nav > li {
+    list-style: none;
+    background-color: orchid;
+    padding: 1rem;
+    line-height: 1.5rem;
+}
+
+nav ol {
+    display: flex;
+}

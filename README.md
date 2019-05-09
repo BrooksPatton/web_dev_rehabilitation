@@ -30,3 +30,9 @@ I also have two bigger projects. These are more real life projects and therefore
 1. [x] [Create a card flip page that shows photo on one side and text on the other using only native html and css](micro_projects/front_end/animations/card-flip)
 1. [x] [Create an accurate clock](micro_projects/front_end/animations/alarm)
 1. [x] [create a page navigation animation that makes it look like the user is flying through the pages](micro_projects/front_end/animations/flying-navigation)
+
+#### Interactive menus
+
+- [ ]  [create a top menu bar with drop downs](micro_projects/front_end/interactive_menus)
+- [ ]  create a sidebar that appears and disappears based on swiping / mouse location
+- [ ]  make a static menu switch from mobile mode to full screen mode on the appropriate devices
