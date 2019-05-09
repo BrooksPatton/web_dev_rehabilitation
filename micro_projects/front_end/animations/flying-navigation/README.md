@@ -9,3 +9,5 @@ Going backwards isn't necessary to animate here, no need to keep a state machine
 ## Purpose
 
 I have had trouble creating animations with transforms in the past. This exercise will help practice this skill
+
+Unfortunately the animations are only sometimes working dependent on browser. I feel that in the real world doing this would require a library like greensock
