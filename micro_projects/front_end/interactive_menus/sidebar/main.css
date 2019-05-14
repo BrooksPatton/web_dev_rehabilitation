@@ -1,0 +1,38 @@
+body, h1 {
+    margin: 0;
+}
+
+body {
+    text-align: center;
+}
+
+header {
+    height: 15vh;
+    background-color: darkcyan;
+    line-height: 15vh;
+}
+
+main {
+    height: 85vh;
+    background-color: deepskyblue;
+}
+
+.sidebar {
+    position: fixed;
+    left: -24vw;
+    width: 25vw;
+    height: 100vh;
+    background-color: darkseagreen;
+    transition: left 250ms;
+}
+
+.sidebar:hover {
+    left: 0;
+}
+
+@media (max-width: 320px) {
+    .sidebar {
+        width: 90vw;
+        left: -89vw;
+    }
+}
