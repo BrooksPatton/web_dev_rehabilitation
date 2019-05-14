@@ -1,6 +1,7 @@
 const body = document.querySelector('body');
 const handleSwipe = HandleSwipe();
 const sidebar = document.querySelector('.sidebar');
+const sidebarLeftDefault = sidebar.style.left;
 
 body.addEventListener('touchstart', touchStartEvent => {
     handleSwipe.setTouchStart(touchStartEvent);
@@ -12,7 +13,7 @@ body.addEventListener('touchend', touchEndEvent => {
     if (handleSwipe.isSwipeRight()) {
         sidebar.style.left = 0;
     } else {
-        sidebar.style.left = '-89vw';
+        sidebar.style.left = sidebarLeftDefault;
     }
 });
 
