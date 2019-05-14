@@ -30,7 +30,7 @@ main {
     left: 0;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 411px) {
     .sidebar {
         width: 90vw;
         left: -89vw;
