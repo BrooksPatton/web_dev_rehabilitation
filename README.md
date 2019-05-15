@@ -36,3 +36,9 @@ I also have two bigger projects. These are more real life projects and therefore
 - [x]  [create a top menu bar with drop downs](micro_projects/front_end/interactive_menus/menu-with-dropdowns)
 - [x]  [create a sidebar that appears and disappears based on swiping / mouse location](micro_projects/front-end/interactive_menus/sidebar)
 - [x]  [make a static menu switch from mobile mode to full screen mode on the appropriate devices](micro_projects/front-end/interactive_menus/mobile_friendly)
+
+#### State management with React
+
+- [ ]  [create a todo app that uses React State for state management](micro_projects/front-end/state_management/react_state)
+- [ ]  create a todo app that uses redux for state management
+- [ ]  create a todo app that uses the context api for state management

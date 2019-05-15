@@ -1,0 +1,24 @@
+.Task {
+    width: 15rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Task-delete {
+    background-color: firebrick;
+    border: 0;
+    color: white;
+}
+
+.Task-delete:hover {
+    background-color: indianred;
+}
+
+.Task-edit {
+    background-color: inherit;
+    border: 1px solid lightslategray;
+}
+
+.Task-edit:hover {
+    background-color: darksalmon;
+}
