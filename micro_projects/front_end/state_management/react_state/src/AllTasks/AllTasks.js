@@ -1,7 +1,7 @@
 import React from 'react';
 import Task from '../task/Task';
 
-function Tasks({ tasks }) {
+function AllTasks({ tasks }) {
     // console.log(tasks);
 
     return (
@@ -13,4 +13,4 @@ function Tasks({ tasks }) {
     );
 }
 
-export default Tasks;
+export default AllTasks;
