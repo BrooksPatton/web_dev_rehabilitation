@@ -9,15 +9,18 @@ class App extends React.Component {
       tasks: [
         {
           id: 1,
-          name: 'Task name'
+          name: 'Task name',
+          completed: false
         },
         {
           id: 2,
-          name: 'Grocery shopping'
+          name: 'Grocery shopping',
+          completed: false
         },
         {
           id: 3,
-          name: 'Stream on Twitch'
+          name: 'Stream on Twitch',
+          completed: false
         }
       ],
       lastIdToAdd: 3
@@ -36,17 +39,26 @@ class App extends React.Component {
   }
 
   editTaskName = editedTask => {
-    const task = this.state.tasks.find(task => task.id === editedTask.id);
+    const task = this.findTaskById(editedTask.id);
 
     task.name = editedTask.name;
     this.setState({ tasks: this.state.tasks });
   }
 
+  toggleTaskCompletedStatus = taskId => {
+    const task = this.findTaskById(taskId);
+
+    task.completed = !task.completed;
+    this.setState({ tasks: this.state.tasks });
+  }
+
+  findTaskById = taskId => this.state.tasks.find(task => task.id === taskId);
+
   render() {
     return (
       <div className="App">
         <h1>React State Todo App</h1>
-        <AllTasks tasks={this.state.tasks} editTaskName={this.editTaskName} />
+        <AllTasks tasks={this.state.tasks} editTaskName={this.editTaskName} toggleTaskCompletedStatus={this.toggleTaskCompletedStatus} />
         <AddTask addTask={this.addTask} />
       </div>
     );

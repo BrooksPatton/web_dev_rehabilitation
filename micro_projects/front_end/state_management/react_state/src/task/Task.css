@@ -30,3 +30,7 @@
     border: 0;
     color: white;
 }
+
+.Task-completed {
+    text-decoration-line: line-through;
+}

@@ -52,13 +52,19 @@ class Task extends React.Component {
         });
     }
 
+    toggleCompletedStatus = () => this.props.toggleTaskCompletedStatus(this.state.task.id)
+
+    renderTaskName = () => (
+        <span className={this.state.task.completed ? 'Task-completed' : null}>{this.state.task.name}</span>
+    )
+
     render() {
         return (
             <section className="Task">
                 <div className="Task-name">
                     <label htmlFor={`${this.state.task.id}-task`}></label>
-                    <input type="checkbox" id={`${this.state.task.id}-task`}></input>
-                    {this.state.editing ? this.renderEditing() : this.state.task.name}
+                    <input type="checkbox" id={`${this.state.task.id}-task`} onChange={this.toggleCompletedStatus} checked={this.state.task.completed}></input>
+                    {this.state.editing ? this.renderEditing() : this.renderTaskName()}
                 </div>
                 <div>
                     {this.state.editing ? this.renderSaveButton() : this.renderEditButton()}
