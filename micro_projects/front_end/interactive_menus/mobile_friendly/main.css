@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+}
+
+nav {
+    height: 2.5rem;
+    background-color: darkseagreen;
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+}
+
+nav img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+nav > div {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0 1rem;
+}
+
+nav > div > p {
+    margin-left: 0.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.button {
+    padding: 0.5rem;
+    background-color: darksalmon;
+    width: 8rem;
+    line-height: 1.5rem;
+    text-align: center;
+}
+
+.button a {
+    text-decoration: none;
+}
+
+.button a:visited {
+    color: black;
+}
+
+.button-active a:visited {
+    color: white;
+}
+
+.button-active {
+    background-color: cadetblue;
+    color: white;
+}
+
+.button:hover:not(.button-active) {
+    background-color: lightsalmon;
+}
+
+.nav-collapse {
+    visibility: hidden;
+}
+
+@media (max-width: 1145px) {
+    .nav-collapse {
+        visibility: visible;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: flex-start;
+        height: 100%;
+    }
+
+    .nav-menu li:not(.nav-collapse) {
+        visibility: hidden;
+    }
+
+    .nav-menu ul:hover li {
+        visibility: visible;
+    }
+}
