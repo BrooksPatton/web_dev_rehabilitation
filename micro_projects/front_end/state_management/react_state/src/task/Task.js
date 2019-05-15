@@ -58,6 +58,8 @@ class Task extends React.Component {
         <span className={this.state.task.completed ? 'Task-completed' : null}>{this.state.task.name}</span>
     )
 
+    removeTask = () => this.props.removeTaskById(this.state.task.id);
+
     render() {
         return (
             <section className="Task">
@@ -69,7 +71,7 @@ class Task extends React.Component {
                 <div>
                     {this.state.editing ? this.renderSaveButton() : this.renderEditButton()}
                     {this.state.editing ? this.renderCancelEditButton() : null}
-                    <button className="Task-delete">X</button>
+                    <button className="Task-delete" onClick={this.removeTask}>X</button>
                 </div>
             </section>
         )

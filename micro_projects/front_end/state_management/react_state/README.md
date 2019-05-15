@@ -9,4 +9,4 @@ This exercise is for using React State for the state management in a todo applic
 * [x] Edit a task text
 * [x] Mark a task as complete
 * [x] Unmark a task (now uncomplete)
-* [ ] Delete a task
+* [x] Delete a task

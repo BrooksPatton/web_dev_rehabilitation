@@ -52,13 +52,21 @@ class App extends React.Component {
     this.setState({ tasks: this.state.tasks });
   }
 
-  findTaskById = taskId => this.state.tasks.find(task => task.id === taskId);
+  findTaskById = taskId => this.state.tasks.find(task => task.id === taskId)
+
+  removeTaskById = taskId => {
+    const taskIndex = this.state.tasks.findIndex(task => task.id === taskId);
+    const { tasks } = this.state;
+
+    tasks.splice(taskIndex, 1);
+    this.setState({ tasks });
+  }
 
   render() {
     return (
       <div className="App">
         <h1>React State Todo App</h1>
-        <AllTasks tasks={this.state.tasks} editTaskName={this.editTaskName} toggleTaskCompletedStatus={this.toggleTaskCompletedStatus} />
+        <AllTasks tasks={this.state.tasks} editTaskName={this.editTaskName} toggleTaskCompletedStatus={this.toggleTaskCompletedStatus} removeTaskById={this.removeTaskById} />
         <AddTask addTask={this.addTask} />
       </div>
     );
