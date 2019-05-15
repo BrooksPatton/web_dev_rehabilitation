@@ -35,11 +35,18 @@ class App extends React.Component {
     this.setState({ tasks, lastIdToAdd: lastIdToAdd + 1 });
   }
 
+  editTaskName = editedTask => {
+    const task = this.state.tasks.find(task => task.id === editedTask.id);
+
+    task.name = editedTask.name;
+    this.setState({ tasks: this.state.tasks });
+  }
+
   render() {
     return (
       <div className="App">
         <h1>React State Todo App</h1>
-        <AllTasks tasks={this.state.tasks} />
+        <AllTasks tasks={this.state.tasks} editTaskName={this.editTaskName} />
         <AddTask addTask={this.addTask} />
       </div>
     );

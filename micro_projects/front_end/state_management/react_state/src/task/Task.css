@@ -1,13 +1,7 @@
 .Task {
-    width: 15rem;
+    width: 25rem;
     display: flex;
     justify-content: space-between;
-}
-
-.Task-delete {
-    background-color: firebrick;
-    border: 0;
-    color: white;
 }
 
 .Task-delete:hover {
@@ -21,4 +15,18 @@
 
 .Task-edit:hover {
     background-color: darksalmon;
+}
+
+.Task-name {
+    display: flex;
+}
+
+.Task li {
+    list-style: none;
+}
+
+.Task-delete {
+    background-color: firebrick;
+    border: 0;
+    color: white;
 }
