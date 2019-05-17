@@ -1,7 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './Task.css';
+import { editTaskName, toggleTaskCompletion, deleteTask } from '../store/store';
 
-class Task extends React.Component {
+class TaskComponent extends React.Component {
     constructor(properties) {
         super(properties);
 
@@ -32,9 +34,6 @@ class Task extends React.Component {
     handleSaveChangeToTask = event => {
         event.preventDefault();
 
-        console.log('handled');
-
-
         const { id } = this.state.task;
 
         this.props.editTaskName({ id, name: this.state.editedTask });
@@ -52,13 +51,13 @@ class Task extends React.Component {
         });
     }
 
-    toggleCompletedStatus = () => this.props.toggleTaskCompletedStatus(this.state.task.id)
+    toggleCompletedStatus = () => this.props.toggleTaskCompletion(this.state.task.id)
 
     renderTaskName = () => (
         <span className={this.state.task.completed ? 'Task-completed' : null}>{this.state.task.name}</span>
     )
 
-    removeTask = () => this.props.removeTaskById(this.state.task.id);
+    removeTask = () => this.props.deleteTask(this.state.task.id);
 
     render() {
         return (
@@ -77,5 +76,7 @@ class Task extends React.Component {
         )
     }
 }
+
+const Task = connect(null, { editTaskName, toggleTaskCompletion, deleteTask })(TaskComponent);
 
 export default Task;

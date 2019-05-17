@@ -1,15 +1,20 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Task from '../task/Task';
+import createSelector from 'selectorator';
 
-function AllTasks({ tasks, editTaskName, toggleTaskCompletedStatus, removeTaskById }) {
+const taskList = createSelector({ tasks: 'tasks' });
+const AllTasksConnectedToRedux = connect(taskList)(AllTasks);
+
+function AllTasks({ tasks }) {
 
     return (
         <section className="Task">
             <ol>
-                {tasks.map(task => <li key={task.id}><Task task={task} editTaskName={editTaskName} toggleTaskCompletedStatus={toggleTaskCompletedStatus} removeTaskById={removeTaskById}></Task></li>)}
+                {tasks.map(task => <li key={task.id}><Task task={task} /></li>)}
             </ol>
         </section>
     );
 }
 
-export default AllTasks;
+export default AllTasksConnectedToRedux;

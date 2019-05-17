@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { addTask } from '../store/store';
 
-class AddTask extends React.Component {
+class AddTaskComponent extends React.Component {
     constructor(properties) {
         super(properties);
         this.state = {
@@ -34,5 +36,7 @@ class AddTask extends React.Component {
         )
     };
 }
+
+const AddTask = connect(null, { addTask })(AddTaskComponent);
 
 export default AddTask;
