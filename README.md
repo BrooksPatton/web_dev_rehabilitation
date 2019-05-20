@@ -41,4 +41,4 @@ I also have two bigger projects. These are more real life projects and therefore
 
 - [x]  [create a todo app that uses React State for state management](micro_projects/front-end/state_management/react_state)
 - [x]  [create a todo app that uses redux for state management](micro_projects/front-end/state_management/redux_state)
-- [ ]  create a todo app that uses the context api for state management
+- [x]  [create a todo app that uses hooks for state management](micro_projects/front-end/state_management/react-hooks)
