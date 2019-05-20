@@ -1,82 +1,56 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './Task.css';
-import { editTaskName, toggleTaskCompletion, deleteTask } from '../store/store';
+import { editTaskName, toggleTaskCompletion, deleteTask, updateEditedTaskName, toggleEditedStatus, saveEditedTaskName } from '../store/store';
 
-class TaskComponent extends React.Component {
-    constructor(properties) {
-        super(properties);
-
-        this.state = {
-            task: this.props.task,
-            editing: false,
-            editedTask: this.props.task.name
-        };
-    }
-
-    renderEditing = () => (
-        <form onSubmit={this.handleSaveChangeToTask}>
-            <label htmlFor={`Task-edit-${this.state.task.id}`}></label>
-            <input type="text" value={this.state.editedTask} id={`Task-edit-${this.state.task.id}`} onChange={this.handleEditTaskChange}></input>
+function TaskComponent({ task, updateEditedTaskName, toggleTaskCompletion, toggleEditedStatus, saveEditedTaskName, deleteTask }) {
+    const renderEditing = () => (
+        <form onSubmit={handleSaveEditedTaskName}>
+            <label htmlFor={`Task-edit-${task.id}`}></label>
+            <input type="text" value={task.editedName} id={`Task-edit-${task.id}`} onChange={event => updateEditedTaskName({ id: task.id, editedName: event.target.value })}></input>
         </form>
     )
 
-    handleEditTaskChange = event => this.setState({ editedTask: event.target.value })
+    const handleSaveEditedTaskName = event => {
 
-    renderEditButton = () => (
-        <button className="Task-edit" onClick={() => this.setState({ editing: true })}>Edit</button>
-    )
-
-    renderSaveButton = () => (
-        <button className="Task-edit" onClick={this.handleSaveChangeToTask}>Save</button>
-    )
-
-    handleSaveChangeToTask = event => {
         event.preventDefault();
-
-        const { id } = this.state.task;
-
-        this.props.editTaskName({ id, name: this.state.editedTask });
-        this.setState({ editing: false })
+        saveEditedTaskName(task.id);
     }
 
-    renderCancelEditButton = () => (
-        <button className="Task-edit" onClick={this.cancelEdit}>Cancel</button>
+    const renderEditButton = () => (
+        <button className="Task-edit" onClick={() => toggleEditedStatus(task.id)}>Edit</button>
     )
 
-    cancelEdit = () => {
-        this.setState({
-            editing: false,
-            editedTask: this.state.task.name
-        });
-    }
-
-    toggleCompletedStatus = () => this.props.toggleTaskCompletion(this.state.task.id)
-
-    renderTaskName = () => (
-        <span className={this.state.task.completed ? 'Task-completed' : null}>{this.state.task.name}</span>
+    const renderSaveButton = () => (
+        <button className="Task-edit" onClick={handleSaveEditedTaskName}>Save</button>
     )
 
-    removeTask = () => this.props.deleteTask(this.state.task.id);
+    const renderCancelEditButton = () => (
+        <button className="Task-edit" onClick={() => toggleEditedStatus(task.id)}>Cancel</button>
+    )
 
-    render() {
-        return (
-            <section className="Task">
-                <div className="Task-name">
-                    <label htmlFor={`${this.state.task.id}-task`}></label>
-                    <input type="checkbox" id={`${this.state.task.id}-task`} onChange={this.toggleCompletedStatus} checked={this.state.task.completed}></input>
-                    {this.state.editing ? this.renderEditing() : this.renderTaskName()}
-                </div>
-                <div>
-                    {this.state.editing ? this.renderSaveButton() : this.renderEditButton()}
-                    {this.state.editing ? this.renderCancelEditButton() : null}
-                    <button className="Task-delete" onClick={this.removeTask}>X</button>
-                </div>
-            </section>
-        )
-    }
+    const toggleCompletedStatus = () => toggleTaskCompletion(task.id)
+
+    const renderTaskName = () => (
+        <span className={task.completed ? 'Task-completed' : null}>{task.name}</span>
+    )
+
+    return (
+        <section className="Task">
+            <div className="Task-name">
+                <label htmlFor={`${task.id}-task`}></label>
+                <input type="checkbox" id={`${task.id}-task`} checked={task.completed} onChange={toggleCompletedStatus}></input>
+                {task.editing ? renderEditing() : renderTaskName()}
+            </div>
+            <div>
+                {task.editing ? renderSaveButton() : renderEditButton()}
+                {task.editing ? renderCancelEditButton() : null}
+                <button className="Task-delete" onClick={() => deleteTask(task.id)}>X</button>
+            </div>
+        </section>
+    )
 }
 
-const Task = connect(null, { editTaskName, toggleTaskCompletion, deleteTask })(TaskComponent);
+const Task = connect(null, { editTaskName, toggleTaskCompletion, deleteTask, updateEditedTaskName, toggleEditedStatus, saveEditedTaskName })(TaskComponent);
 
 export default Task;
