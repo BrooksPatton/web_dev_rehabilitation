@@ -1,5 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should cancel changes to the edited task name 1`] = `
+<section
+  class="Task"
+  data-testid="Task"
+>
+  <div
+    class="Task-name"
+  >
+    <label
+      for="1-task"
+    />
+    <input
+      data-testid="Task-checkbox"
+      id="1-task"
+      type="checkbox"
+    />
+    <span>
+      task name
+    </span>
+  </div>
+  <div>
+    <button
+      class="Task-edit"
+      data-testid="Task-edit-button"
+    >
+      Edit
+    </button>
+    <button
+      class="Task-delete"
+    >
+      X
+    </button>
+  </div>
+</section>
+`;
+
 exports[`should render the Task component with a completed task 1`] = `
 <section
   className="Task"
@@ -120,6 +156,7 @@ exports[`should render the edit input field when edit button is clicked 1`] = `
     </button>
     <button
       class="Task-edit"
+      data-testid="Task-cancel"
     >
       Cancel
     </button>

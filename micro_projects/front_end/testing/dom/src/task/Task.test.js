@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { render, fireEvent, cleanup } from 'react-testing-library';
+import { render, fireEvent, cleanup, waitForDomChange } from 'react-testing-library';
 
 import Task from './Task';
 
@@ -100,4 +100,38 @@ it('should save changes to the edited task name', () => {
 
     expect(editTaskName.mock.results[0].value.id).toBe(1);
     expect(editTaskName.mock.results[0].value.name).toBe('new task name');
+});
+
+it('should cancel changes to the edited task name', () => {
+    const task = {
+        id: 1,
+        name: 'task name',
+        completed: false
+    };
+
+    const editTaskName = jest.fn(() => { });
+    const toggleTaskCompletedStatus = jest.fn(() => { });
+    const removeTaskById = jest.fn(() => { });
+
+    const { getByTestId } = render(<Task task={task} editTaskName={editTaskName} toggleTaskCompletedStatus={toggleTaskCompletedStatus} removeTaskById={removeTaskById} />);
+    const editButton = getByTestId('Task-edit-button');
+    const section = getByTestId('Task');
+
+    fireEvent.click(editButton);
+
+    let input = getByTestId('Task-edit-input');
+    const cancel = getByTestId('Task-cancel');
+
+    fireEvent.change(input, { target: { value: 'edited task name' } });
+
+    fireEvent.click(cancel);
+
+    expect(section).toMatchSnapshot();
+
+    fireEvent.click(editButton);
+
+    input = getByTestId('Task-edit-input');
+
+    expect(input.value).toBe('task name');
+    expect(editTaskName.mock.calls.length).toBe(0);
 });

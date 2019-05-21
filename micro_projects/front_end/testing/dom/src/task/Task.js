@@ -30,7 +30,7 @@ function Task({ task, editTaskName, toggleTaskCompletedStatus, removeTaskById })
     }
 
     const renderCancelEditButton = () => (
-        <button className="Task-edit" onClick={cancelEdit}>Cancel</button>
+        <button className="Task-edit" onClick={cancelEdit} data-testid="Task-cancel">Cancel</button>
     )
 
     const cancelEdit = () => {
