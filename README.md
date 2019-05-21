@@ -45,6 +45,6 @@ I also have two bigger projects. These are more real life projects and therefore
 
 #### Front end testing
 
-- [ ] [add snapshot testing to the React todo app](micro_projects/front-end/testing/snapshot)
-- [ ] add function tests to the React todo app
+- [x] [add snapshot testing to the React todo app](micro_projects/front-end/testing/snapshot)
+- [x] [add functionial tests to the React todo app](micro_projects/front-end/testing/dom)
 - [ ] add cypress testing to the React todo app
