@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+<section
+  className="AddTask"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <label>
+      <h1>
+        Add Task
+      </h1>
+      <input
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </label>
+    <button>
+      Add
+    </button>
+  </form>
+</section>
+`;
