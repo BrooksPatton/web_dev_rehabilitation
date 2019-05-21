@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the Task component with a completed task 1`] = `
+<section
+  className="Task"
+  data-testid="Task"
+>
+  <div
+    className="Task-name"
+  >
+    <label
+      htmlFor="1-task"
+    />
+    <input
+      checked={true}
+      data-testid="Task-checkbox"
+      id="1-task"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <span
+      className="Task-completed"
+    >
+      I am a completed task
+    </span>
+  </div>
+  <div>
+    <button
+      className="Task-edit"
+      data-testid="Task-edit-button"
+      onClick={[Function]}
+    >
+      Edit
+    </button>
+    <button
+      className="Task-delete"
+      onClick={[Function]}
+    >
+      X
+    </button>
+  </div>
+</section>
+`;
+
+exports[`should render the Task component with a task 1`] = `
+<section
+  className="Task"
+  data-testid="Task"
+>
+  <div
+    className="Task-name"
+  >
+    <label
+      htmlFor="1-task"
+    />
+    <input
+      checked={false}
+      data-testid="Task-checkbox"
+      id="1-task"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <span
+      className={null}
+    >
+      I am a task name
+    </span>
+  </div>
+  <div>
+    <button
+      className="Task-edit"
+      data-testid="Task-edit-button"
+      onClick={[Function]}
+    >
+      Edit
+    </button>
+    <button
+      className="Task-delete"
+      onClick={[Function]}
+    >
+      X
+    </button>
+  </div>
+</section>
+`;
+
+exports[`should render the edit input field when edit button is clicked 1`] = `
+<section
+  class="Task"
+  data-testid="Task"
+>
+  <div
+    class="Task-name"
+  >
+    <label
+      for="1-task"
+    />
+    <input
+      data-testid="Task-checkbox"
+      id="1-task"
+      type="checkbox"
+    />
+    <form>
+      <label
+        for="Task-edit-1"
+      />
+      <input
+        data-testid="Task-edit-input"
+        id="Task-edit-1"
+        type="text"
+        value="task that is being edited"
+      />
+    </form>
+  </div>
+  <div>
+    <button
+      class="Task-edit"
+    >
+      Save
+    </button>
+    <button
+      class="Task-edit"
+    >
+      Cancel
+    </button>
+    <button
+      class="Task-delete"
+    >
+      X
+    </button>
+  </div>
+</section>
+`;

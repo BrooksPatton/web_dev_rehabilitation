@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render AllTasks component without tasks 1`] = `
+<section
+  className="Task"
+>
+  <ol />
+</section>
+`;
+
+exports[`should render the AllTasks component with tasks 1`] = `
+<section
+  className="Task"
+>
+  <ol>
+    <li>
+      <section
+        className="Task"
+        data-testid="Task"
+      >
+        <div
+          className="Task-name"
+        >
+          <label
+            htmlFor="1-task"
+          />
+          <input
+            checked={false}
+            data-testid="Task-checkbox"
+            id="1-task"
+            onChange={[Function]}
+            type="checkbox"
+          />
+          <span
+            className={null}
+          >
+            task name
+          </span>
+        </div>
+        <div>
+          <button
+            className="Task-edit"
+            data-testid="Task-edit-button"
+            onClick={[Function]}
+          >
+            Edit
+          </button>
+          <button
+            className="Task-delete"
+            onClick={[Function]}
+          >
+            X
+          </button>
+        </div>
+      </section>
+    </li>
+  </ol>
+</section>
+`;
