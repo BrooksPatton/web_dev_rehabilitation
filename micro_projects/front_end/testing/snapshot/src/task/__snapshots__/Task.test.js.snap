@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the Task component with a completed task 1`] = `
+<section
+  className="Task"
+>
+  <div
+    className="Task-name"
+  >
+    <label
+      htmlFor="1-task"
+    />
+    <input
+      checked={true}
+      id="1-task"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <span
+      className="Task-completed"
+    >
+      I am a completed task
+    </span>
+  </div>
+  <div>
+    <button
+      className="Task-edit"
+      onClick={[Function]}
+    >
+      Edit
+    </button>
+    <button
+      className="Task-delete"
+      onClick={[Function]}
+    >
+      X
+    </button>
+  </div>
+</section>
+`;
+
+exports[`should render the Task component with a task 1`] = `
+<section
+  className="Task"
+>
+  <div
+    className="Task-name"
+  >
+    <label
+      htmlFor="1-task"
+    />
+    <input
+      checked={false}
+      id="1-task"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <span
+      className={null}
+    >
+      I am a task name
+    </span>
+  </div>
+  <div>
+    <button
+      className="Task-edit"
+      onClick={[Function]}
+    >
+      Edit
+    </button>
+    <button
+      className="Task-delete"
+      onClick={[Function]}
+    >
+      X
+    </button>
+  </div>
+</section>
+`;
