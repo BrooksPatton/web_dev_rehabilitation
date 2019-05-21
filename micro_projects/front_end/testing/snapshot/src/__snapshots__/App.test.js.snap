@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="App"
+>
+  <h1>
+    React State Todo App
+  </h1>
+  <section
+    className="Task"
+  >
+    <ol />
+  </section>
+  <section
+    className="AddTask"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <label>
+        <h1>
+          Add Task
+        </h1>
+        <input
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </label>
+      <button>
+        Add
+      </button>
+    </form>
+  </section>
+</div>
+`;

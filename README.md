@@ -42,3 +42,9 @@ I also have two bigger projects. These are more real life projects and therefore
 - [x]  [create a todo app that uses React State for state management](micro_projects/front-end/state_management/react_state)
 - [x]  [create a todo app that uses redux for state management](micro_projects/front-end/state_management/redux_state)
 - [x]  [create a todo app that uses hooks for state management](micro_projects/front-end/state_management/react-hooks)
+
+#### Front end testing
+
+- [ ] [add snapshot testing to the React todo app](micro_projects/front-end/testing/snapshot)
+- [ ] add function tests to the React todo app
+- [ ] add cypress testing to the React todo app
