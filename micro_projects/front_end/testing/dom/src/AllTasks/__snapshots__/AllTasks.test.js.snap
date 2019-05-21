@@ -47,6 +47,7 @@ exports[`should render the AllTasks component with tasks 1`] = `
           </button>
           <button
             className="Task-delete"
+            data-testid="Task-delete"
             onClick={[Function]}
           >
             X

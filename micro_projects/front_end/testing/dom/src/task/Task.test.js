@@ -135,3 +135,23 @@ it('should cancel changes to the edited task name', () => {
     expect(input.value).toBe('task name');
     expect(editTaskName.mock.calls.length).toBe(0);
 });
+
+it('should delete the task', () => {
+    const task = {
+        id: 1,
+        name: 'task name',
+        completed: false
+    };
+
+    const editTaskName = jest.fn(() => { });
+    const toggleTaskCompletedStatus = jest.fn(() => { });
+    const removeTaskById = jest.fn(id => id);
+
+    const { getByTestId } = render(<Task task={task} editTaskName={editTaskName} toggleTaskCompletedStatus={toggleTaskCompletedStatus} removeTaskById={removeTaskById} />);
+    const deleteButton = getByTestId('Task-delete');
+
+    fireEvent.click(deleteButton);
+
+    expect(removeTaskById.mock.calls.length).toBe(1);
+    expect(removeTaskById.mock.results[0].value).toBe(1);
+});

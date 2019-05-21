@@ -56,7 +56,7 @@ function Task({ task, editTaskName, toggleTaskCompletedStatus, removeTaskById })
             <div>
                 {editing ? renderSaveButton() : renderEditButton()}
                 {editing ? renderCancelEditButton() : null}
-                <button className="Task-delete" onClick={removeTask}>X</button>
+                <button className="Task-delete" onClick={removeTask} data-testid="Task-delete">X</button>
             </div>
         </section>
     )

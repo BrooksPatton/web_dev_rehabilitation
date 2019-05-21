@@ -29,6 +29,7 @@ exports[`should cancel changes to the edited task name 1`] = `
     </button>
     <button
       class="Task-delete"
+      data-testid="Task-delete"
     >
       X
     </button>
@@ -70,6 +71,7 @@ exports[`should render the Task component with a completed task 1`] = `
     </button>
     <button
       className="Task-delete"
+      data-testid="Task-delete"
       onClick={[Function]}
     >
       X
@@ -112,6 +114,7 @@ exports[`should render the Task component with a task 1`] = `
     </button>
     <button
       className="Task-delete"
+      data-testid="Task-delete"
       onClick={[Function]}
     >
       X
@@ -162,6 +165,7 @@ exports[`should render the edit input field when edit button is clicked 1`] = `
     </button>
     <button
       class="Task-delete"
+      data-testid="Task-delete"
     >
       X
     </button>
