@@ -19,7 +19,7 @@ function Task({ task, editTaskName, toggleTaskCompletedStatus, removeTaskById })
     )
 
     const renderSaveButton = () => (
-        <button className="Task-edit" onClick={handleSaveChangeToTask}>Save</button>
+        <button className="Task-edit Task-save" onClick={handleSaveChangeToTask}>Save</button>
     )
 
     const handleSaveChangeToTask = event => {
@@ -30,7 +30,7 @@ function Task({ task, editTaskName, toggleTaskCompletedStatus, removeTaskById })
     }
 
     const renderCancelEditButton = () => (
-        <button className="Task-edit" onClick={cancelEdit} data-testid="Task-cancel">Cancel</button>
+        <button className="Task-edit Task-cancel" onClick={cancelEdit} data-testid="Task-cancel">Cancel</button>
     )
 
     const cancelEdit = () => {

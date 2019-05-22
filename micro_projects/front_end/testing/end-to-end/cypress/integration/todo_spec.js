@@ -48,11 +48,80 @@ describe('todo app', () => {
 
     it('should mark a task as complete', () => {
         cy
-            .get('.AllTasks:first-child input')
+            .get('.AllTasks input')
+            .first()
             .click();
 
         cy
-            .get('.AllTasks:first-child span')
+            .get('.AllTasks span')
+            .first()
             .should('have.class', 'Task-completed');
+    });
+
+    it('should edit the task name', () => {
+        cy
+            .get('button.Task-edit')
+            .eq(1)
+            .click();
+
+        cy
+            .get('.Task form input')
+            .type(' meow')
+            .should('have.value', 'second task to complete meow');
+
+        cy
+            .get('button.Task-save')
+            .click();
+
+        cy
+            .get('.Task span')
+            .eq(1)
+            .should('have.text', 'second task to complete meow');
+    });
+
+    it('should cancel editing the task name without saving', () => {
+        cy
+            .get('button.Task-edit')
+            .eq(2)
+            .click();
+
+        cy
+            .get('.Task form input')
+            .type(' meow')
+            .should('have.value', 'third task to complete meow');
+
+        cy
+            .get('button.Task-cancel')
+            .click();
+
+        cy
+            .get('.Task span')
+            .eq(2)
+            .should('have.text', 'third task to complete');
+
+        cy
+            .get('button.Task-edit')
+            .eq(2)
+            .click();
+
+        cy
+            .get('.Task form input')
+            .should('have.value', 'third task to complete');
+
+        cy
+            .get('button.Task-cancel')
+            .click();
+    });
+
+    it('should delete a task', () => {
+        cy
+            .get('.Task-delete')
+            .first()
+            .click();
+
+        cy
+            .get('.Task span')
+            .first()
+            .should('have.text', 'second task to complete meow');
     });
 });
