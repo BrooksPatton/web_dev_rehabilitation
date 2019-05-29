@@ -1,0 +1,38 @@
+# Authentication with Username, Password, and Cookies
+
+- backend
+  - [ ] Node.js with Express
+  - [ ] store username and password in memory
+  - [ ] hash the passwords bcrypt
+  - [ ] store cookies to keep sessions
+  - [ ] Unprotected route for everyone to read
+  - [ ] Protected route that only logged in users can read
+  - [ ] delete account
+- frontend
+  - [ ] React
+  - [ ] landing page
+    - [ ] create account
+    - [ ] login
+    - [ ] public data
+  - [ ] dashboard
+    - [ ] private data
+    - [ ] log out
+    - [ ] delete account
+
+## stories
+
+- [x] As a user I want to see the landing page when navigate to the page
+  - [x] welcome h1
+  - [x] create account form
+  - [x] login form
+- [ ] As a user, I want to create an account
+  - [ ] create account form works
+  - [ ] redirects to the dashboard
+- [ ] As a logged in user, I want to see my personal information
+  - [ ] display personal info on dashboard
+- [ ] As a logged in user, I want to be able to log out
+  - [ ] log out button
+  - [ ] redirects to landing page on log out
+- [ ] As a logged in user, I want to be able to delete my account
+  - [ ] delete button
+  - [ ] redirects to landing page on account deletion

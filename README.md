@@ -54,7 +54,7 @@ I also have two bigger projects. These are more real life projects and therefore
 
 #### authentication
 
-- [ ] create a three page app that uses a username/password with cookies to authenticate
+- [ ] [create a three page app that uses a username/password with cookies to authenticate](micro_projects/back_end/authentication/username_password_cookies)
 - [ ] create a three page app that uses oauth with cookies to authenticate
 - [ ] Create a the page so that uses a with service for authentication
 
