@@ -1,4 +1,5 @@
 # web_dev_rehabilitation
+
 Coding micro and normal projects to get myself back into coding after a break due to concussion
 
 ## How This Works
@@ -13,7 +14,7 @@ I also have two bigger projects. These are more real life projects and therefore
 
 ## Getting Ready
 
-* [x] Rebuild programming computer with latest Ubuntu OS
+- [x] Rebuild programming computer with latest Ubuntu OS
 
 ## Micro Projects
 
@@ -33,18 +34,24 @@ I also have two bigger projects. These are more real life projects and therefore
 
 #### Interactive menus
 
-- [x]  [create a top menu bar with drop downs](micro_projects/front_end/interactive_menus/menu-with-dropdowns)
-- [x]  [create a sidebar that appears and disappears based on swiping / mouse location](micro_projects/front-end/interactive_menus/sidebar)
-- [x]  [make a static menu switch from mobile mode to full screen mode on the appropriate devices](micro_projects/front-end/interactive_menus/mobile_friendly)
+- [x] [create a top menu bar with drop downs](micro_projects/front_end/interactive_menus/menu-with-dropdowns)
+- [x] [create a sidebar that appears and disappears based on swiping / mouse location](micro_projects/front-end/interactive_menus/sidebar)
+- [x] [make a static menu switch from mobile mode to full screen mode on the appropriate devices](micro_projects/front-end/interactive_menus/mobile_friendly)
 
 #### State management with React
 
-- [x]  [create a todo app that uses React State for state management](micro_projects/front-end/state_management/react_state)
-- [x]  [create a todo app that uses redux for state management](micro_projects/front-end/state_management/redux_state)
-- [x]  [create a todo app that uses hooks for state management](micro_projects/front-end/state_management/react-hooks)
+- [x] [create a todo app that uses React State for state management](micro_projects/front-end/state_management/react_state)
+- [x] [create a todo app that uses redux for state management](micro_projects/front-end/state_management/redux_state)
+- [x] [create a todo app that uses hooks for state management](micro_projects/front-end/state_management/react-hooks)
 
 #### Front end testing
 
 - [x] [add snapshot testing to the React todo app](micro_projects/front-end/testing/snapshot)
 - [x] [add functionial tests to the React todo app](micro_projects/front-end/testing/dom)
 - [x] [add cypress testing to the React todo app](micro_projects/front-end/testing/end-to-end)
+
+## Projects
+
+### Front End
+
+- [x] [Create a portfolio site](https://github.com/BrooksPatton/brooks-patton-website) - [Deployed site](https://www.brooks-patton.com/)
