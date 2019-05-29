@@ -50,6 +50,32 @@ I also have two bigger projects. These are more real life projects and therefore
 - [x] [add functionial tests to the React todo app](micro_projects/front-end/testing/dom)
 - [x] [add cypress testing to the React todo app](micro_projects/front-end/testing/end-to-end)
 
+### Back End
+
+#### authentication
+
+- [ ] create a three page app that uses a username/password with cookies to authenticate
+- [ ] create a three page app that uses oauth with cookies to authenticate
+- [ ] Create a the page so that uses a with service for authentication
+
+#### databases
+
+- [ ] create a reddit clone with comments using postgres with knex
+- [ ] create a reddit clone with comments using postgres with an orm
+- [ ] create a reddit clone with comments using mongo with monk
+
+#### iot
+
+- [ ] create a device that indicates if the windows should be opened
+- [ ] create a button that puts a marker into stream chat
+- [ ] create a security camera
+
+#### networking
+
+- [ ] create a turn based game like diplomacy
+- [ ] create a chat application that allows people to chat with me even if I'm offline
+- [ ] create a space shooter game with web sockets
+
 ## Projects
 
 ### Front End
