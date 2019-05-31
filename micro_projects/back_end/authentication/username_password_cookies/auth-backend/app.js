@@ -31,9 +31,16 @@ function Accounts() {
     return result > -1;
   };
 
+  const getById = id => {
+    const account = accounts.find(account => account.id === id);
+
+    return { username: account.username, id: account.id };
+  };
+
   return {
     add,
-    doesUsernameExist
+    doesUsernameExist,
+    getById
   };
 }
 
@@ -68,6 +75,16 @@ app.post("/api/v1/accounts", (request, response) => {
     response.status(201);
     response.json({ message: "account created" });
   });
+});
+
+app.get("/api/v1/accounts", (request, response) => {
+  const account = accounts.getById(request.session.id);
+
+  if (account) {
+    response.json({ message: account });
+  } else {
+    response.status(401).json({ message: "not authorized" });
+  }
 });
 
 app.listen(port, () => console.log(`server listening on port ${port}`));

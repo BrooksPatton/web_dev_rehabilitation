@@ -28,8 +28,8 @@
 - [x] As a user, I want to create an account
   - [x] create account form works
   - [x] redirects to the dashboard
-- [ ] As a logged in user, I want to see my personal information
-  - [ ] display personal info on dashboard
+- [x] As a logged in user, I want to see my personal information
+  - [x] display personal info on dashboard
 - [ ] As a logged in user, I want to be able to log out
   - [ ] log out button
   - [ ] redirects to landing page on log out
