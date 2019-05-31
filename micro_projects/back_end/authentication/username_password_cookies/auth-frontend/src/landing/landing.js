@@ -1,8 +1,14 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { navigate } from "@reach/router";
 
 function Landing() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessages, setErrorMessages] = useState({
+    createAccount: null,
+    loginToAccount: null
+  });
   const apiUrl = "http://localhost:5000/api";
 
   const createAccount = event => {
@@ -13,22 +19,19 @@ function Landing() {
       password
     };
 
-    fetch(`${apiUrl}/v1/accounts`, {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(account)
-    })
+    axios
+      .post(`${apiUrl}/v1/accounts`, account, { withCredentials: true })
       .then(response => {
-        return response.json();
-      })
-      .then(data => {
-        console.log(data);
+        if (response.status === 201) {
+          navigate("/dashboard/");
+        }
       })
       .catch(error => {
-        console.log(error);
+        console.log(error.response.data);
+        const errorMessage = Object.assign({}, errorMessages);
+
+        errorMessage.createAccount = error.response.data.message;
+        setErrorMessages(errorMessage);
       });
   };
 
@@ -56,7 +59,8 @@ function Landing() {
             onChange={event => setPassword(event.target.value)}
           />
         </div>
-        <button role="create account">Create Account</button>
+        <button>Create Account</button>
+        <p>{errorMessages.createAccount}</p>
       </form>
 
       <h2>Login</h2>
@@ -69,7 +73,7 @@ function Landing() {
           <label htmlFor="login-password">Password</label>
           <input type="password" id="login-password" />
         </div>
-        <button role="login account">Create Account</button>
+        <button>Create Account</button>
       </form>
     </section>
   );

@@ -25,29 +25,41 @@ function Accounts() {
     return account;
   };
 
+  const doesUsernameExist = username => {
+    const result = accounts.findIndex(account => account.username === username);
+
+    return result > -1;
+  };
+
   return {
-    add
+    add,
+    doesUsernameExist
   };
 }
 
 const accounts = Accounts();
 
-app.set("trust proxy", 1);
-
-app.use(cors());
+app.use(
+  cors({
+    origin: true,
+    credentials: true
+  })
+);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(
   cookieSession({
     name: "session",
-    keys: ["blah"]
+    secret: COOKIE_KEY
   })
 );
 
 app.post("/api/v1/accounts", (request, response) => {
-  console.log(request.session.id);
-
   const { username, password } = request.body;
+
+  if (accounts.doesUsernameExist(username)) {
+    return response.status(400).json({ message: "username already exists" });
+  }
 
   bcrypt.hash(password, 12).then(hash => {
     const account = accounts.add({ username, hash });

@@ -25,9 +25,9 @@
   - [x] welcome h1
   - [x] create account form
   - [x] login form
-- [ ] As a user, I want to create an account
-  - [ ] create account form works
-  - [ ] redirects to the dashboard
+- [x] As a user, I want to create an account
+  - [x] create account form works
+  - [x] redirects to the dashboard
 - [ ] As a logged in user, I want to see my personal information
   - [ ] display personal info on dashboard
 - [ ] As a logged in user, I want to be able to log out
