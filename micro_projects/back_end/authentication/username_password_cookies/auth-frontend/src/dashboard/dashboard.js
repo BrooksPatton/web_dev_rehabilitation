@@ -11,6 +11,14 @@ function Dashboard() {
       })
       .then(() => navigate("/"))
       .catch(error => console.error(error));
+  const deleteAccount = () => {
+    axios
+      .delete("http://localhost:5000/api/v1/accounts", {
+        withCredentials: true
+      })
+      .then(() => navigate("/?message=account deleted"))
+      .catch(error => console.error(error));
+  };
 
   useEffect(() => {
     axios
@@ -22,7 +30,7 @@ function Dashboard() {
         if (error.response.status === 401) {
           navigate("/?message=not authorized");
         } else {
-          console.error(error);
+          navigate(`/?message=${error.response.data.message}`);
         }
       });
   }, [user.id]);
@@ -32,7 +40,12 @@ function Dashboard() {
       <h1>Dashboard</h1>
       <div>User ID: {user.id}</div>
       <div>Username: {user.username}</div>
-      <button onClick={logout}>Log Out</button>
+      <div>
+        <button onClick={logout}>Log Out</button>
+      </div>
+      <div>
+        <button onClick={deleteAccount}>Delete Account</button>
+      </div>
     </section>
   );
 }

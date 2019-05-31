@@ -34,13 +34,24 @@ function Accounts() {
   const getById = id => {
     const account = accounts.find(account => account.id === id);
 
+    if (!account) {
+      throw new Error("could not find account");
+    }
+
     return { username: account.username, id: account.id };
+  };
+
+  const deleteById = id => {
+    const accountIndex = accounts.findIndex(account => account.id === id);
+
+    accounts.splice(accountIndex, 1);
   };
 
   return {
     add,
     doesUsernameExist,
-    getById
+    getById,
+    deleteById
   };
 }
 
@@ -78,8 +89,6 @@ app.post("/api/v1/accounts", (request, response) => {
 });
 
 app.get("/api/v1/accounts/logout", (request, response) => {
-  console.log(request.session.id);
-
   request.session.id = null;
   response.json({ message: "logged out" });
 });
@@ -88,13 +97,25 @@ app.get("/api/v1/accounts", (request, response) => {
   if (!request.session.id)
     return response.status(401).json({ message: "not authorized" });
 
-  const account = accounts.getById(request.session.id);
+  try {
+    const account = accounts.getById(request.session.id);
 
-  if (account) {
-    response.json({ message: account });
-  } else {
-    response.status(401).json({ message: "not authorized" });
+    if (account) {
+      response.json({ message: account });
+    } else {
+      response.status(401).json({ message: "not authorized" });
+    }
+  } catch (error) {
+    return response.status(500).json({ message: error.message });
   }
+});
+
+app.delete("/api/v1/accounts", (request, response) => {
+  const { id } = request.session;
+
+  accounts.deleteById(id);
+  response.session.id = null;
+  response.json({ message: "account deleted" });
 });
 
 app.listen(port, () => console.log(`server listening on port ${port}`));
