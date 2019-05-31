@@ -30,9 +30,9 @@
   - [x] redirects to the dashboard
 - [x] As a logged in user, I want to see my personal information
   - [x] display personal info on dashboard
-- [ ] As a logged in user, I want to be able to log out
-  - [ ] log out button
-  - [ ] redirects to landing page on log out
+- [x] As a logged in user, I want to be able to log out
+  - [x] log out button
+  - [x] redirects to landing page on log out
 - [ ] As a logged in user, I want to be able to delete my account
   - [ ] delete button
   - [ ] redirects to landing page on account deletion

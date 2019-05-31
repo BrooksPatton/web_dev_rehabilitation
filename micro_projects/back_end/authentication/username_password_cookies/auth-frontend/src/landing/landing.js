@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { navigate } from "@reach/router";
+import * as queryString from "query-string";
 
-function Landing() {
+function Landing({ location }) {
+  console.log(location.search);
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessages, setErrorMessages] = useState({
@@ -10,6 +13,7 @@ function Landing() {
     loginToAccount: null
   });
   const apiUrl = "http://localhost:5000/api";
+  const { message } = queryString.parse(location.search);
 
   const createAccount = event => {
     event.preventDefault();
@@ -37,6 +41,7 @@ function Landing() {
 
   return (
     <section className="Landing">
+      <h1>{message}</h1>
       <h1>Landing page</h1>
 
       <h2>Create Account</h2>

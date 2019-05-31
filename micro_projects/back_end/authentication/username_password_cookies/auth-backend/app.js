@@ -77,7 +77,17 @@ app.post("/api/v1/accounts", (request, response) => {
   });
 });
 
+app.get("/api/v1/accounts/logout", (request, response) => {
+  console.log(request.session.id);
+
+  request.session.id = null;
+  response.json({ message: "logged out" });
+});
+
 app.get("/api/v1/accounts", (request, response) => {
+  if (!request.session.id)
+    return response.status(401).json({ message: "not authorized" });
+
   const account = accounts.getById(request.session.id);
 
   if (account) {
