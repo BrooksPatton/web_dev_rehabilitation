@@ -17,3 +17,6 @@
 - [x] As a logged in user, I want to be able to delete my account
   - [x] delete button
   - [x] redirects to landing page on account deletion
+- [x] As a user, I want to be able to log in to my existing account
+  - [x] login form works
+  - [x] redirects to dashboard

@@ -13,7 +13,11 @@ function Landing({ location }) {
     loginToAccount: null
   });
   const apiUrl = "http://localhost:5000/api";
-  const { message } = queryString.parse(location.search);
+  const [message, setMessage] = useState(null);
+  const queryMessage = queryString.parse(location.search);
+
+  if (queryMessage && queryMessage.message && !message)
+    setMessage(queryMessage.message);
 
   const createAccount = event => {
     event.preventDefault();
@@ -37,6 +41,21 @@ function Landing({ location }) {
         errorMessage.createAccount = error.response.data.message;
         setErrorMessages(errorMessage);
       });
+  };
+
+  const [loginUserCredentials, setLoginUserCredentials] = useState({
+    username: "",
+    password: ""
+  });
+
+  const login = event => {
+    event.preventDefault();
+    axios
+      .post(`${apiUrl}/v1/accounts/login`, loginUserCredentials, {
+        withCredentials: true
+      })
+      .then(() => navigate("/dashboard/"))
+      .catch(error => setMessage(error.response.data.message));
   };
 
   return (
@@ -69,16 +88,36 @@ function Landing({ location }) {
       </form>
 
       <h2>Login</h2>
-      <form>
+      <form onSubmit={login}>
         <div>
           <label htmlFor="login-username">Username</label>
-          <input type="text" id="login-username" />
+          <input
+            type="text"
+            id="login-username"
+            value={loginUserCredentials.username}
+            onChange={event =>
+              setLoginUserCredentials({
+                username: event.target.value,
+                password: loginUserCredentials.password
+              })
+            }
+          />
         </div>
         <div>
           <label htmlFor="login-password">Password</label>
-          <input type="password" id="login-password" />
+          <input
+            type="password"
+            id="login-password"
+            value={loginUserCredentials.password}
+            onChange={event =>
+              setLoginUserCredentials({
+                password: event.target.value,
+                username: loginUserCredentials.username
+              })
+            }
+          />
         </div>
-        <button>Create Account</button>
+        <button>Login</button>
       </form>
     </section>
   );

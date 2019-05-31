@@ -47,11 +47,20 @@ function Accounts() {
     accounts.splice(accountIndex, 1);
   };
 
+  const comparePasswordToHash = ({ password, hash }) => {
+    return bcrypt.compare(password, hash);
+  };
+
+  const getByUsername = username =>
+    accounts.find(account => account.username === username);
+
   return {
     add,
     doesUsernameExist,
     getById,
-    deleteById
+    deleteById,
+    comparePasswordToHash,
+    getByUsername
   };
 }
 
@@ -114,8 +123,27 @@ app.delete("/api/v1/accounts", (request, response) => {
   const { id } = request.session;
 
   accounts.deleteById(id);
-  response.session.id = null;
+  request.session.id = null;
   response.json({ message: "account deleted" });
+});
+
+app.post("/api/v1/accounts/login", (request, response) => {
+  const { username, password } = request.body;
+  const account = accounts.getByUsername(username);
+
+  if (!account)
+    return response.status(500).json({ message: "wrong username or password" });
+
+  accounts
+    .comparePasswordToHash({ password, hash: account.hash })
+    .then(isMatch => {
+      if (isMatch) {
+        request.session.id = account.id;
+        response.json({ message: "logged in" });
+      } else {
+        response.status(400).json({ message: "wrong username or password" });
+      }
+    });
 });
 
 app.listen(port, () => console.log(`server listening on port ${port}`));
