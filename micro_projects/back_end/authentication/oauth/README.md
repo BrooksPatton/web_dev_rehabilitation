@@ -3,7 +3,7 @@
 ## stories
 
 - [ ] As a user I want to see the landing page when navigate to the page
-  - [ ] welcome h1
+  - [x] welcome h1
   - [ ] Login with GitHub link
 - [ ] As a logged in user, I want to see my personal information
   - [ ] display personal info on dashboard
