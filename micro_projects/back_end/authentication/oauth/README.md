@@ -2,9 +2,9 @@
 
 ## stories
 
-- [ ] As a user I want to see the landing page when navigate to the page
+- [x] As a user I want to see the landing page when navigate to the page
   - [x] welcome h1
-  - [ ] Login with GitHub link
+  - [x] Login with GitHub link
 - [ ] As a logged in user, I want to see my personal information
   - [ ] display personal info on dashboard
 - [ ] As a logged in user, I want to be able to log out
